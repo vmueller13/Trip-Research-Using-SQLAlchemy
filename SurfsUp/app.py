@@ -7,32 +7,35 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
+from flask_sqlalchemy import SQLAlchemy
 
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///hawaii.sqlite")
-
-
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
-Base = automap_base()
+db = SQLAlchemy(app)
+db.init_app(app)
+db.Model.metadata.reflect(bind=db.engine)
+
 # reflect the tables
-Base.prepare(engine, reflect=True)
-Base.classes.keys()
+Base = automap_base(metadata=db.Model.metadata)
+Base.prepare()
 
 # Save references to each table
 Station = Base.classes.station
 Measurement = Base.classes.measurement
 
 # Create our session (link) from Python to the DB
-session = Session(engine)
+session = Session(db.engine)
 
 #################################################
 # Flask Setup
 #################################################
 #Create an instance of Flask
 app = Flask(__name__)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Define the homepage route
 @app.route("/")
