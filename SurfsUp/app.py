@@ -15,20 +15,16 @@ from flask_sqlalchemy import SQLAlchemy
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
-db = SQLAlchemy(app)
-db.init_app(app)
-db.Model.metadata.reflect(bind=db.engine)
-
+Base = automap_base()
 # reflect the tables
-Base = automap_base(metadata=db.Model.metadata)
-Base.prepare()
+Base.prepare(autoload_with=engine)
 
 # Save references to each table
 Station = Base.classes.station
 Measurement = Base.classes.measurement
 
 # Create our session (link) from Python to the DB
-session = Session(db.engine)
+session = Session(engine)
 
 #################################################
 # Flask Setup
