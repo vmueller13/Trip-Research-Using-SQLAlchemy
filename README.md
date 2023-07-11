@@ -17,8 +17,7 @@ This application is designed to use the SQLAlchemy `create_engine()` function to
 The latter part of this assignment was to create a climate app using a Flask API based on the queries I completed in the previous sections of code. To do this, I needed to convert the query results from my precipitation analysis into a dictionary using `date` as the key and `pcrp` as the value and return a JSON list of stations from the dataset. Ultimately, I created several routes for the API to take including: precipitation, stations, tobs (temperature observation), start and end.
 
 ![Flask App](SurfsUp/Images/flask_screenshot_cropped.png)
-    
-    
+
 <ins>Challenges</ins>
     
 The biggest challenge that I ran into with this assignment was being able to set up the database correctly for the flask app. At first, I had created a separate database and connected it to the measurement and station tables. This however, did not allow the app to run on my local host, so after consulting with the learning assistant Evan, he helped me to understand how to reflect an existing database into a new model and run `flask -- app app run` in my console in order to see the completed flask.
