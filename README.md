@@ -1,11 +1,11 @@
-# sqlalchemy-challenge
+# Module 10: SQLAlchemy-challenge
+
 <ins>Project Overview</ins>
     
     
 For this project, I completed some research for planning a trip to Hawaii. I conducted some climate analysis about the area using two CSV files and a SQL query file to find information about the temperature and precipitation of different stations around Hawaii.
 
 <ins>Process and Technologies</ins>
-    
     
 This application is designed to use the SQLAlchemy `create_engine()` function to connect to my SQLite database, use the `automap_base()` function to reflect my tables into classes and save the references to the classes `station` and `measurement`. By linking Python to a SQLAlchemy session, I was able to perform a precipitation analysis, a station analysis and design a climate app. The two analyses were failry straightforward using the `session.query` format to gather the information about the most active station fromt he past year. This information was plotted as shown below:
     
