@@ -8,7 +8,7 @@ For this project, I completed some research for planning a trip to Hawaii. I con
 
 <ins>Process and Technologies</ins>
     
-This application is designed to use the SQLAlchemy `create_engine()` function to connect to my SQLite database, use the `automap_base()` function to reflect my tables into classes and save the references to the classes `station` and `measurement`. By linking Python to a SQLAlchemy session, I was able to perform a precipitation analysis, a station analysis and design a climate app. The two analyses were failry straightforward using the `session.query` format to gather the information about the most active station fromt he past year. This information was plotted as shown below:
+This application is designed to use the SQLAlchemy `create_engine()` function to connect to my SQLite database, use the `automap_base()` function to reflect my tables into classes and save the references to the classes `station` and `measurement`. By linking Python to a SQLAlchemy session, I was able to perform a precipitation analysis, a station analysis and design a climate app. The two analyses were fairly straightforward using the `session.query` format to gather the information about the most active station from the past year. This information was plotted as shown below:
     
 ![Precipitation Analysis](SurfsUp/Images/pcrp_plot.png)
     
