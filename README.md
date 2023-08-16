@@ -1,4 +1,4 @@
-# SQLAlchemy-challenge
+# Trip Research Using SQLAlchemy
 
 <ins>Project Overview</ins>
 -----
