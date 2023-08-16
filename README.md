@@ -1,4 +1,4 @@
-# Module 10: SQLAlchemy-challenge
+# SQLAlchemy-challenge
 
 <ins>Project Overview</ins>
 -----
